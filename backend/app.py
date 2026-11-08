@@ -75,16 +75,19 @@ def get_media_info():
         # 'ydl_opts' is a dictionary of settings we pass to yt-dlp
         # ==============================================================
         ydl_opts = {
-            # 'quiet': True → don't print progress to the terminal
             'quiet': True,
-            # 'no_warnings': True → suppress warning messages
             'no_warnings': True,
-            # 'extract_flat': False → fully process the URL
             'extract_flat': False,
-            # Skip actual download — we just want info + direct links
             'skip_download': True,
-            # Format selection strings (explained below)
-            # We'll handle format selection separately for each quality
+            # Yeh headers add karne se yt-dlp ek real browser ki tarah behave karega aur bot-detection bypass hogi
+            'http_headers': {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Sec-Ch-Ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+                'Sec-Ch-Ua-Mobile': '?0',
+                'Sec-Ch-Ua-Platform': '"Windows"',
+            }
         }
 
         # --- Extract full video info ---
