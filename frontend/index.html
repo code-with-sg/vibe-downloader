@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeDownloader — SKY GRIT</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">SG</span>
+        <span class="logo-name">SKY GRIT</span>
+        <span class="logo-product">VibeDownloader</span>
+      </div>
+      <nav>
+        <a href="#how-it-works" class="nav-link">How it works</a>
+        <a href="#platforms" class="nav-link">Platforms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Download any video<br>or audio, free.</h1>
+        <p class="hero-sub">Paste a link from YouTube, Instagram, TikTok, X, Facebook, Spotify and more. No signup. No limits.</p>
+
+        <!-- Input Group -->
+        <div class="input-wrap">
+          <input
+            id="url-input"
+            type="url"
+            class="url-input"
+            placeholder="https://www.youtube.com/watch?v=..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="fetch-btn" class="btn-primary">
+            <span id="btn-text">Get Download Links</span>
+            <span id="btn-spinner" class="btn-spinner hidden" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <!-- Error display -->
+        <div id="error-box" class="error-box hidden" role="alert"></div>
+
+        <!-- Platform pills -->
+        <div id="platforms" class="platform-row">
+          <span class="pill">▶ YouTube</span>
+          <span class="pill">📸 Instagram</span>
+          <span class="pill">🎵 TikTok</span>
+          <span class="pill">𝕏 Twitter / X</span>
+          <span class="pill">👍 Facebook</span>
+          <span class="pill">🎧 Spotify</span>
+          <span class="pill">▸ Vimeo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESULT CARD ===== -->
+    <section id="result-section" class="result-section hidden">
+      <div class="container">
+        <div class="result-card">
+
+          <div class="result-media">
+            <div class="thumb-wrap">
+              <img id="result-thumb" src="" alt="Thumbnail" class="thumb" />
+              <span id="result-platform-badge" class="platform-badge"></span>
+              <span id="result-duration" class="duration-badge"></span>
+            </div>
+
+            <div class="result-meta">
+              <p id="result-uploader" class="result-uploader"></p>
+              <h2 id="result-title" class="result-title"></h2>
+
+              <div class="dl-buttons">
+                <p class="dl-label">Save as:</p>
+
+                <a id="dl-hd" href="#" target="_blank" rel="noopener noreferrer" class="dl-btn dl-primary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                  Video HD
+                </a>
+
+                <a id="dl-sd" href="#" target="_blank" rel="noopener noreferrer" class="dl-btn dl-secondary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                  Video SD
+                </a>
+
+                <a id="dl-audio" href="#" target="_blank" rel="noopener noreferrer" class="dl-btn dl-audio">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                  MP3 Audio
+                </a>
+              </div>
+
+              <p class="result-disclaimer">Links expire after a short time. Download immediately after clicking.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how-it-works" class="how-section">
+      <div class="container">
+        <h2 class="section-heading">How it works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-n">1</div>
+            <h3>Copy the URL</h3>
+            <p>Go to any supported platform and copy the video or track link from your browser's address bar.</p>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <h3>Paste and fetch</h3>
+            <p>Paste it into the box above and click "Get Download Links". Our server processes it in seconds.</p>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <h3>Pick your format</h3>
+            <p>Choose HD video, SD video, or MP3 audio. Click the button — your download starts immediately.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark small">SG</span>
+        <span class="footer-brand-text">SKY GRIT — VibeDownloader</span>
+      </div>
+      <p class="footer-note">We do not store, host, or redistribute any media. All links are served directly from the original platforms.</p>
+      <p class="footer-copy">© 2025 SKY GRIT (SG). Built with yt-dlp. For personal use only.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
