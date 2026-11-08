@@ -16,14 +16,14 @@
 // ⚠️ IMPORTANT: Set your backend URL here.
 //
 // LOCAL TESTING:  'http://localhost:5000'
-// AFTER DEPLOYING TO RENDER: 'https://your-app-name.onrender.com'
+// AFTER DEPLOYING TO RENDER: 'https://vibe-downloader.onrender.com/'
 //
 // Steps:
 // 1. While testing on your computer: use localhost:5000
 // 2. After you deploy to Render: replace with your Render URL
 // 3. Make sure there is NO trailing slash at the end
 // ==============================================================
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://vibe-downloader.onrender.com/';
 
 
 // --- Grab all the HTML elements we need to interact with ---
