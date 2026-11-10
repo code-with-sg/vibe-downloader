@@ -7,8 +7,10 @@ services:
     rootDir: backend
     buildCommand: |
       pip install -r requirements.txt
-      export DENO_INSTALL="/opt/render/project/.deno"
-      curl -fsSL https://deno.land/install.sh | sh
+      mkdir -p /opt/render/project/.deno/bin
+      curl -fsSL https://github.com/denoland/deno/releases/latest/download/deno-x86_64-unknown-linux-gnu.zip -o deno.zip
+      unzip -o deno.zip -d /opt/render/project/.deno/bin
+      rm deno.zip
     startCommand: gunicorn app:app
     envVars:
       - key: PATH
