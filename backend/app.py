@@ -64,11 +64,8 @@ def build_ydl_opts():
         'quiet': True,
         'no_warnings': True,
         'skip_download': True,
-
-        # Best available format — koi restriction nahi
-        # best = video+audio combined
-        # bestvideo+bestaudio = alag alag best quality
-        'format': 'best/bestvideo+bestaudio',
+        # Format specify mat karo — yt-dlp khud best choose karega
+        # 'format' key hata di hai taaki koi restriction na ho
 
         # Real Chrome browser headers
         'http_headers': {
