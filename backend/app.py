@@ -64,17 +64,6 @@ def build_ydl_opts():
         },
 
         # --- YouTube specific settings ---
-        'extractor_args': {
-            'youtube': {
-                # web + android dono try karega — zyada compatible
-                'player_client': ['web', 'android'],
-            },
-            # Instagram ke liye
-            'instagram': {
-                'username': '',  # Optional: Instagram username daal sakte ho
-            },
-        },
-
         # Requests ke beech thoda wait — bot jaisa nahi lagega
         'sleep_interval': 1,
         'max_sleep_interval': 2,
@@ -82,6 +71,9 @@ def build_ydl_opts():
         # Warnings suppress
         'ignoreerrors': False,
         'nocheckcertificate': False,
+
+        # Format: best available le lo — koi restriction nahi
+        'format': 'best/bestvideo+bestaudio/bestaudio/bestvideo',
     }
 
     # Agar cookies file hai toh add karo
