@@ -2,10 +2,16 @@ services:
   - type: web
     name: vibedownloader-api
     env: python
-    buildCommand: pip install -r requirements.txt
-        rootDirectory: backend
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: |
+      pip install -r requirements.txt
+      export DENO_INSTALL="/opt/render/project/.deno"
+      curl -fsSL https://deno.land/install.sh | sh
     startCommand: gunicorn app:app
-    healthCheckPath: /health
     envVars:
+      - key: PATH
+        value: /opt/render/project/.deno/bin:/usr/local/bin:/usr/bin:/bin
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.10.0
