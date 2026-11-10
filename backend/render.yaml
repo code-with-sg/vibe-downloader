@@ -3,6 +3,7 @@ services:
     name: vibedownloader-api
     env: python
     buildCommand: pip install -r requirements.txt
+        rootDirectory: backend
     startCommand: gunicorn app:app
     healthCheckPath: /health
     envVars:
