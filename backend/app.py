@@ -18,14 +18,18 @@ CORS(app)
 # Neeche guide hai isko kaise banate hain
 # ==============================================================
 # Render Secret Files /etc/secrets/ mein store hoti hain
-COOKIES_FILE = '/etc/secrets/cookies.txt'
+# /etc/secrets/ read-only hota hai Render pe
+# Isliye /tmp/ mein save karte hain — yeh writable hota hai
+COOKIES_FILE = '/tmp/cookies.txt'
 
-# Render pe cookies env variable se load karo
-cookies_env = os.environ.get('COOKIES_CONTENT', '')
-if cookies_env and not os.path.isfile(COOKIES_FILE):
-    with open(COOKIES_FILE, 'w') as f:
-        f.write(cookies_env)
-    print("✅ Cookies env variable se load ki gayi")
+# Render Secret File se directly padhte hain
+SECRET_COOKIES = '/etc/secrets/cookies.txt'
+
+if os.path.isfile(SECRET_COOKIES):
+    # Secret file se /tmp/ mein copy karo
+    import shutil
+    shutil.copy(SECRET_COOKIES, COOKIES_FILE)
+    print("✅ Cookies /etc/secrets/ se /tmp/ mein copy ki gayi")
 
 
 def build_ydl_opts():
